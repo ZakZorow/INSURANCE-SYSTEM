@@ -5,12 +5,28 @@
 class Act
 {
     public:
-        /** Default constructor */
+
         Act();
-        /** Default destructor */
         ~Act();
+        double calculatePremiumAct();
+        void displayDetailsAct()
+        bool saveToFileAct();
+
+
 
     protected:
+
+        const double default_premium;
+        String name;
+        String vehicle_make;
+        String gender;
+        int age;
+        int driving_regularity;
+        double car_value;
+        double excess;
+        int claims_history;
+        int policy_number;
+
 
     private:
 };
