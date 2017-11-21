@@ -1,0 +1,78 @@
+
+--------------------------------------------------
+ Name : john
+ Vehicle Make : subaru
+ Gender : m
+ Age : 21
+ Driving Regularity : 7011988
+ Car Value 300000 Ksh 
+ Excess 2e+006 Ksh 
+ Claims History 3
+--------------------------------------------------
+ Premium : 12000Ksh pa
+
+
+--------------------------------------------------
+ Name : kilonzo
+ Vehicle Make : mercedes
+ Gender : m
+ Age : 21
+ Driving Regularity : 3
+ Car Value : 3e+006 Ksh 
+ Excess : 200000 Ksh 
+ Claims History : 3
+--------------------------------------------------
+ Premium : 12000Ksh pa
+
+
+--------------------------------------------------
+ Name : moses
+ Vehicle Make : mercedes
+ Gender : m
+ Age : 32
+ Driving Regularity : 3
+ Car Value : 3000000 Ksh 
+ Excess : 1000000 Ksh 
+ Claims History : 3
+--------------------------------------------------
+ Premium : 12000Ksh pa
+
+
+--------------------------------------------------
+ Name : helen
+ Vehicle Make : mercedes
+ Gender : m
+ Age : 32
+ Driving Regularity : 3
+ Car Value : 3000000 Ksh 
+ Excess : 1000000 Ksh 
+ Claims History : 2
+--------------------------------------------------
+ Premium : 12000Ksh pa
+
+
+--------------------------------------------------
+ Name : john
+ Vehicle Make : mercedes
+ Gender : m
+ Age : 32
+ Driving Regularity : 3
+ Car Value : 1000000 Ksh 
+ Excess : 1000000 Ksh 
+ Claims History : 3
+--------------------------------------------------
+ Premium : 12000Ksh pa
+
+
+--------------------------------------------------
+ Name : isaac
+ Vehicle Make : bmw
+ Gender : M
+ Age : 49
+ Driving Regularity : 3
+ Car Value : 2000000 Ksh 
+ Excess : 1000000 Ksh 
+ Claims History : 2
+--------------------------------------------------
+ Premium : 21333.3Ksh pa
+

@@ -2,6 +2,7 @@
 #define ACT_H
 
 
+
 class Act
 {
     public:
@@ -9,17 +10,17 @@ class Act
         Act();
         ~Act();
         double calculatePremiumAct();
-        void displayDetailsAct()
+        void displayDetailsAct();
         bool saveToFileAct();
 
 
 
     protected:
 
-        const double default_premium;
-        String name;
-        String vehicle_make;
-        String gender;
+
+       // string name;
+       // string vehicle_make;
+       // string gender;
         int age;
         int driving_regularity;
         double car_value;
@@ -29,6 +30,7 @@ class Act
 
 
     private:
+         const double default_premium =12000.00;
 };
 
 #endif // ACT_H
