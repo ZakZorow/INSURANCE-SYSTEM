@@ -3,7 +3,6 @@
 #include<string>
 using namespace std;
 
-
 class Act
 {
      protected:
@@ -43,19 +42,16 @@ class Act
         double calculatePremiumAct(){
 
           premium = default_premium;
-
-
           return premium;
         }
-
 
        void displayDetails(){
              cout<<endl;
              cout<<"--------------------------------------------------"<<endl;
              cout << " Name : " <<name <<endl;
              cout << " Vehicle Make : "<< vehicle_make<<endl;
-             cout << " Gender : "<< gender << endl;
-             cout << " Age : "<< age << endl;
+             cout << " Gender : "<< gender <<  endl;
+             cout << " Age : "<< age<< endl;
              cout << " Driving Regularity : "<< driving_regularity<<endl;
              cout << " Car Value " << car_value << " Ksh "<<endl;
              cout << " Excess "<< excess << " Ksh "<<endl;
@@ -64,6 +60,7 @@ class Act
              cout <<" Premium : "<< premium   << "Ksh pa"<<endl;
              cout<<endl;
              cout<<endl;
+
 
         }
 
@@ -85,7 +82,6 @@ class Act
              policy_file<<" Premium : "<< premium   << "Ksh pa"<<endl;
              policy_file<<endl;
              policy_file.close();
-
              cout<<endl;
              cout<<" saved customer to file "<<endl;
 
@@ -93,20 +89,14 @@ class Act
 
          cout<<endl;
          cout<<" could not save to file "<<endl;
-
         }
-
-
         }
 
        static void showFileDetails(){
 
             string line;
-
             ifstream policy_file;
-
             policy_file.open("policies.txt", ios::in);
-
             if(!policy_file){
 
                     cout<<"There are no stored policy records" <<endl;
@@ -115,33 +105,20 @@ class Act
             }else{
 
             while(getline(policy_file, line )){
-
-              cout<<line <<endl;
-
+            cout<<line <<endl;
             }
-
-
            policy_file.close();
-
             }
-
-
         }
-
-
-
-
 };
 
 class ThirdParty: public Act{
 
-
  public:
-      ThirdParty(string name_c, string vehicle_make_c, string gender_c, int age_c,
-                 int driving_regularity_c, double car_value_c, double excess_c
-                ,int claims_history_c): Act(name_c, vehicle_make_c,  gender_c,  age_c,
-                 driving_regularity_c,car_value_c, excess_c
-                 ,claims_history_c){
+        ThirdParty(string name_c, string vehicle_make_c, string gender_c, int age_c,
+        int driving_regularity_c, double car_value_c, double excess_c
+        ,int claims_history_c): Act( name_c, vehicle_make_c,gender_c,
+        age_c,driving_regularity_c, car_value_c,excess_c, claims_history_c){
 
                 name = name_c;
                 vehicle_make = vehicle_make_c;
@@ -154,144 +131,78 @@ class ThirdParty: public Act{
 
         }
 
-
         double calculatePremiumThirdParty(){
 
             double points = 0;
-
             if(claims_history == 0){
-
                 points+=1;
-
-            }else if(claims_history >= 1 && claims_history <= 3){
-
-                points+=3;
-
-                   }else if(claims_history >3 && claims_history <= 5){
-
-
+                }else if(claims_history >= 1 && claims_history <= 3){
+                    points+=3;
+                    }else if(claims_history >3 && claims_history <= 5){
                        points+=5;
                           }else if(claims_history >5){
-
                               points+=5;
 
 
             }
 
             if(excess >=100000 && excess <= 300000){
-
                 points+=6;
-            }else if(excess >=300000 && excess <= 700000){
-
-                points+=4;
-
-            }else if(excess >=700000){
-
-            points+=2;
+                    }else if(excess >=300000 && excess <= 700000){
+                        points+=4;
+                        }else if(excess >=700000){
+                            points+=2;
             }
 
 
              if(driving_regularity ==1){
-
                  points+=1;
-
-             } else if (driving_regularity == 2){
-
-                  points+=2;
-
-             } else if (driving_regularity == 3){
-
-                  points+=3;
-
-             } else if (driving_regularity == 4){
-
-                  points+=4;
-
-             } else if (driving_regularity == 5){
-
-                  points+=5;
-
-
-             } else if (driving_regularity == 6){
-
-                  points+=6;
-
-             } else if (driving_regularity == 7){
-
-                  points+=7;
-
-
+                    } else if (driving_regularity == 2){
+                        points+=2;
+                            } else if (driving_regularity == 3){
+                                points+=3;
+                                } else if (driving_regularity == 4){
+                                    points+=4;
+                                    } else if (driving_regularity == 5){
+                                        points+=5;
+                                        } else if (driving_regularity == 6){
+                                            points+=6;
+                                                } else if (driving_regularity == 7){
+                                                    points+=7;
              }
 
 
              if(gender.compare("M") == 0 ){
-
                 points+=7;
+                    }else if(gender.compare("F") == 0){
+                        points+=4;
 
-
-             }else if(gender.compare("F") == 0){
-
-                 points+=4;
-
-
-             }
-
-               if(vehicle_make.compare("Mercedes") == 0 ){
-
-                points+=7;
-
-
-             }else if(vehicle_make.compare("toyota") == 0){
-
-                 points+=3;
-
-                    }else if(vehicle_make.compare("bmw") == 0){
-
-                 points+=7;
-
-                    }else if(vehicle_make.compare("audi") == 0){
-
-                 points+=6;
-
-                    }else if(vehicle_make.compare("nissan") == 0){
-
-                 points+=5;
-
-                    }else if(vehicle_make.compare("honda") == 0){
-
-                 points+=4;
+                }if(vehicle_make.compare("Mercedes") == 0 ){
+                    points+=7;
+                        }else if(vehicle_make.compare("toyota") == 0){
+                            points+=3;
+                                }else if(vehicle_make.compare("bmw") == 0){
+                                    points+=7;
+                                    }else if(vehicle_make.compare("audi") == 0){
+                                        points+=6;
+                                        }else if(vehicle_make.compare("nissan") == 0){
+                                            points+=5;
+                                            }else if(vehicle_make.compare("honda") == 0){
+                                                points+=4;
 
 
              }
 
             if(age >=18 && age <=25){
-
-            points+=8;
-
-            }else if(age >25 && age <= 40){
-
-            points+=5;
-
-            }else if(age >40){
-
-
-            points+=6;
+                points+=8;
+                    }else if(age >25 && age <= 40){
+                        points+=5;
+                        }else if(age >40){
+                            points+=6;
             }
-
             premium = calculatePremiumAct() +(((points/6)/1000) * car_value);
-
-
-
-
-
             return premium;
-
         }
-
-
-
-
-
 };
 
 class ThirdPartyFireTheft: public ThirdParty{
@@ -300,9 +211,9 @@ class ThirdPartyFireTheft: public ThirdParty{
  public:
       ThirdPartyFireTheft(string name_c, string vehicle_make_c, string gender_c, int age_c,
                  int driving_regularity_c, double car_value_c, double excess_c
-                ,int claims_history_c): ThirdParty(name_c, vehicle_make_c,  gender_c,  age_c,
-                 driving_regularity_c,car_value_c, excess_c
-                 ,claims_history_c){
+                ,int claims_history_c): ThirdParty( name_c, vehicle_make_c, gender_c, age_c,
+                  driving_regularity_c, car_value_c, excess_c
+                 , claims_history_c){
 
                 name = name_c;
                 vehicle_make = vehicle_make_c;
@@ -314,22 +225,88 @@ class ThirdPartyFireTheft: public ThirdParty{
                 claims_history = claims_history_c;
 
         }
+    double calculatePremiumThirdPartyFireTheft(){
 
 
+ double points = 0;
+
+            if(claims_history == 0){
+                points+=2;
+                }else if(claims_history >= 1 && claims_history <= 3){
+                    points+=4;
+                        }else if(claims_history >3 && claims_history <= 5){
+                            points+=5;
+                                }else if(claims_history >5){
+                                    points+=7;
+            }
+
+            if(excess >=100000 && excess <= 300000){
+                points+=7;
+                    }else if(excess >=300000 && excess <= 700000){
+                        points+=5;
+                        }else if(excess >=700000){
+                            points+=3;
+            }
 
 
+             if(driving_regularity ==1){
+                 points+=1;
+                    } else if (driving_regularity == 2){
+                        points+=2;
+                            } else if (driving_regularity == 3){
+                                points+=3;
+                                } else if (driving_regularity == 4){
+                                    points+=4;
+                                    } else if (driving_regularity == 5){
+                                        points+=5;
+                                            } else if (driving_regularity == 6){
+                                                points+=6;
+                                                } else if (driving_regularity == 7){
+                                                    points+=7;
+             }
+
+
+             if(gender.compare("M") == 0 ){
+                points+=7;
+                    }else if(gender.compare("F") == 0){
+                        points+=5;
+             }
+
+               if(vehicle_make.compare("Mercedes") == 0 ){
+                points+=7;
+                    }else if(vehicle_make.compare("toyota") == 0){
+                        points+=3;
+                        }else if(vehicle_make.compare("bmw") == 0){
+                            points+=7;
+                            }else if(vehicle_make.compare("audi") == 0){
+                                points+=6;
+                                }else if(vehicle_make.compare("nissan") == 0){
+                                    points+=5;
+                                    }else if(vehicle_make.compare("honda") == 0){
+                                        points+=4;
+             }
+
+            if(age >=18 && age <=25){
+                points+=8;
+                    }else if(age >25 && age <= 40){
+                        points+=6;
+                        }else if(age >40){
+                            points+=7;
+            }
+
+            premium = calculatePremiumAct() + calculatePremiumThirdParty() + (((points/6)/1000) * car_value);
+            return premium;
+    }
 
 };
 
-class Comprehensive: public ThirdPartyFireTheft{
+class Comprehensive : public ThirdPartyFireTheft{
 
 
  public:
-      Comprehensive(string name_c, string vehicle_make_c, string gender_c, int age_c,
-                 int driving_regularity_c, double car_value_c, double excess_c
-                ,int claims_history_c): ThirdPartyFireTheft(name_c, vehicle_make_c,  gender_c,  age_c,
-                 driving_regularity_c,car_value_c, excess_c
-                 ,claims_history_c){
+      Comprehensive(string name_c, string vehicle_make_c, string gender_c, int age_c,int driving_regularity_c, double car_value_c,
+        double excess_c,int claims_history_c): ThirdPartyFireTheft( name_c, vehicle_make_c, gender_c, age_c,
+         driving_regularity_c, car_value_c, excess_c, claims_history_c){
 
                 name = name_c;
                 vehicle_make = vehicle_make_c;
@@ -342,14 +319,82 @@ class Comprehensive: public ThirdPartyFireTheft{
 
         }
 
+    double calculatePremiumComprehensive(){
+
+        double points = 0;
+
+    if(claims_history == 0){
+                points+=3;
+            }else if(claims_history >= 1 && claims_history <= 3){
+                points+=5;
+                   }else if(claims_history >3 && claims_history <= 5){
+                       points+=6;
+                          }else if(claims_history >5){
+                              points+=8;
 
 
+            }
 
+            if(excess >=100000 && excess <= 300000){
+                points+=8;
+                    }else if(excess >=300000 && excess <= 700000){
+                        points+=6;
+                        }else if(excess >=700000){
+                            points+=4;
+            }
+
+
+             if(driving_regularity ==1){
+                 points+=1;
+                    } else if (driving_regularity == 2){
+                        points+=2;
+                        } else if (driving_regularity == 3){
+                            points+=3;
+                            } else if (driving_regularity == 4){
+                                points+=4;
+                                } else if (driving_regularity == 5){
+                                    points+=5;
+                                    } else if (driving_regularity == 6){
+                                        points+=6;
+                                        } else if (driving_regularity == 7){
+                                            points+=7;
+             }
+
+             if(gender.compare("M") == 0 ){
+                points+=8;
+                    }else if(gender.compare("F") == 0){
+                        points+=6;
+             }
+
+               if(vehicle_make.compare("Mercedes") == 0 ){
+                points+=8;
+                    }else if(vehicle_make.compare("toyota") == 0){
+                        points+=3;
+                        }else if(vehicle_make.compare("bmw") == 0){
+                            points+=7;
+                            }else if(vehicle_make.compare("audi") == 0){
+                                points+=6;
+                                }else if(vehicle_make.compare("nissan") == 0){
+                                    points+=5;
+                                    }else if(vehicle_make.compare("honda") == 0){
+                                        points+=4;
+
+
+             }
+
+            if(age >=18 && age <=25){
+                points+=9;
+                    }else if(age >25 && age <= 40){
+                        points+=7;
+                        }else if(age >40){
+                            points+=8;
+            }
+
+            premium = calculatePremiumAct() + calculatePremiumThirdParty() + calculatePremiumThirdPartyFireTheft() + (((points/6)/1000) * car_value);
+            return premium;
+    }
 
 };
-
-
-
 
 int main()
 {
@@ -364,36 +409,48 @@ int main()
    int claims_history;
    int option;
 
+
+
     for(;;){
      cout << "  *****Welcome to the motor vehicle insurance system*****  " << endl;
      cout <<endl;
      cout<<endl;
      cout<<"  Enter 1 to add new customer  "<<endl;
      cout<<"  Enter 2 to view existing customers  "<<endl;
-     cout<<"  Enter 3 to exit the sytem  "<<endl;
+     cout<<"  Enter 3 to exit the system  "<<endl;
      cin>>option;
 
      if(option == 1){
 
-
-
      cout<<endl;
      cout <<" Please enter your name (no spaces)" <<endl;
      cin>>name;
-     cout <<" Please enter yor gender (M or F)" <<endl;
+     cout <<" Please enter your gender (M or F)" <<endl;
      cin>>gender;
      cout <<" Please enter your age" <<endl;
      cin>>age;
+     if(age<18)
+     {
+         cout<<" YOU CANNOT BE COVERED"<<endl;
+     }
+     else if(age>99)
+        {
+            cout<<" YOU CANNOT BE COVERED"<<endl;
+        }
+        else{
+
      cout <<" Please enter your vehicle make"<< endl;
      cin>>vehicle_make;
      cout <<" Please enter how many days on average you drive in a week (1-7)"<< endl;
      cin>>driving_regularity;
-     cout<< " Please enter how many insurance claims youve made in the past"<<endl;
+     cout<< " Please enter how many insurance claims you have made in the past"<<endl;
      cin>>claims_history;
      cout <<" Please enter the current market value in Ksh of your vehicle"<< endl;
      cin>>car_value;
-     cout <<" Please enter the excess in Ksh youre willing to pay ( minimum 100000 Ksh)"<< endl;
+     cout <<" Please enter the excess in Ksh you're willing to pay ( minimum 100000 Ksh)"<< endl;
      cin>>excess;
+
+
 
     cout << " please select the insurance policy you wish to use "<< endl;
     cout<<"  1. Act only policy"<<endl;
@@ -401,14 +458,13 @@ int main()
     cout<<"  3. Third party fire & Theft policy"<<endl;
     cout <<"  4. comprehensive policy"<<endl;
     cin >>policy;
+     }
 
     switch(policy){
 
 case 1:
 
     {
-
-
      Act act(name, vehicle_make, gender, age, driving_regularity, car_value,excess,claims_history);
      act.calculatePremiumAct();
      act.saveToFile();
@@ -417,35 +473,33 @@ case 1:
 
 case 2:
     {
-
-
-
     ThirdParty tp(name, vehicle_make, gender, age, driving_regularity, car_value,excess,claims_history);
-     tp.calculatePremiumThirdParty();
-     tp.saveToFile();
+    tp.calculatePremiumThirdParty();
+    tp.saveToFile();
     }
     break;
 
 case 3:
 {
-
-
+    ThirdPartyFireTheft tpft(name, vehicle_make, gender, age, driving_regularity, car_value,excess,claims_history);
+    tpft.calculatePremiumThirdPartyFireTheft();
+    tpft.saveToFile();
 
 }
     break;
 
 case 4:
+    {
+      Comprehensive cp(name, vehicle_make, gender, age, driving_regularity, car_value,excess,claims_history);
+      cp.calculatePremiumComprehensive();
+      cp.saveToFile();
+    }
 
     break;
 
 default:
 
     cout<< "incorrect policy selected"<<endl;
-
-
-
-
-
 
     }
 
@@ -457,20 +511,28 @@ default:
 
      Act::showFileDetails();
 
+
      }else if(option == 3) {
 
-      break;
+    break;
+
 
 
      }else{
 
-     break;
+   break;
+
      }
 
-
-
-
-    }
-
-    return 0;
 }
+
+ return 0;
+   }
+
+
+
+
+
+
+
+

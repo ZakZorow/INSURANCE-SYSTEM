@@ -1,5 +1,6 @@
 # depslib dependency file v1.0
-1511215673 source:c:\users\isaac sichangi\desktop\github\insurance-system\insurancesystem\main.cpp
+1511623257 source:c:\users\isaac sichangi\desktop\github\insurance-system\insurancesystem\main.cpp
 	<iostream>
 	<fstream>
+	<string>
 

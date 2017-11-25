@@ -76,3 +76,16 @@
 --------------------------------------------------
  Premium : 21333.3Ksh pa
 
+
+--------------------------------------------------
+ Name : kelly
+ Vehicle Make : bmw
+ Gender : m
+ Age : 23
+ Driving Regularity : 3
+ Car Value : 1000000 Ksh 
+ Excess : 300000 Ksh 
+ Claims History : 2
+--------------------------------------------------
+ Premium : 67166.7Ksh pa
+
